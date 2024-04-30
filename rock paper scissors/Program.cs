@@ -5,21 +5,20 @@ int botChoice;
 string playerChoice;
 int convertedP;
 
-Console.WriteLine("Rock paper scissors because my teacher told me to...");
+Console.WriteLine("Rock, paper, scissors because my teacher told me to...");
 reset();
 
 void comparison(int bot, int player)
 {
     Console.WriteLine("Bot chose: " + options[bot] + "\nPlayer chose: " + options[player]);
     if (bot == player) {
-        Console.WriteLine("Draw, resetting.");
+        Console.WriteLine("Draw, resetting.\n");
         reset();
     }
     else if (bot == 0 && bot - player == -1 || bot == 1 && bot - player == -1 || bot == 2 && bot - player == 2) {
-        Console.WriteLine("Player wins.");
-    }
-    else {
-        Console.WriteLine("Bot wins.");
+        Console.WriteLine("Player wins.\n");
+    } else {
+        Console.WriteLine("Bot wins.\n");
     }
     Console.WriteLine("Would you like to play again? y/n");
     string pChoice;
@@ -27,8 +26,7 @@ void comparison(int bot, int player)
     if (pChoice == "y" || pChoice =="Y" || pChoice == "") {
         reset();
         pChoice = "";
-    }
-    else {
+    } else {
         Process.GetCurrentProcess().Kill();
     }
 }
@@ -38,7 +36,7 @@ void reset()
     Random random = new Random();
     botChoice = random.Next(0, 2);
     playerChoice = null;
-    Console.WriteLine("Choose your option: \n1: Rock \n2: Paper \n3: Scissors");
+    Console.WriteLine("Choose your option: \n1: Rock \n2: Paper \n3: Scissors\n");
     while (optionChecker(playerChoice) == false) {
         playerChoice = Console.ReadLine();
     }

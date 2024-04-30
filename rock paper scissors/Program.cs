@@ -15,13 +15,7 @@ void comparison(int bot, int player)
         Console.WriteLine("Draw, resetting.");
         reset();
     }
-    else if (bot == 0 && bot - player == -1) {
-        Console.WriteLine("Player wins.");
-    }
-    else if (bot == 1 && bot - player == -1) {
-        Console.WriteLine("Player wins.");
-    }
-    else if (bot == 2 && bot - player == 2) {
+    else if (bot == 0 && bot - player == -1 || bot == 1 && bot - player == -1 || bot == 2 && bot - player == 2) {
         Console.WriteLine("Player wins.");
     }
     else {
